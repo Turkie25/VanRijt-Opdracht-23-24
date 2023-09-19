@@ -3,7 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using VanRijtDataBase.Model;
+using VanRijtDataBase.Models;
 
 #nullable disable
 
@@ -16,10 +16,10 @@ namespace VanRijtDataBase.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.10")
+                .HasAnnotation("ProductVersion", "7.0.11")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("VanRijtDataBase.Model.Adres", b =>
+            modelBuilder.Entity("VanRijtDataBase.Models.Adres", b =>
                 {
                     b.Property<int>("AdresID")
                         .ValueGeneratedOnAdd()
@@ -29,11 +29,9 @@ namespace VanRijtDataBase.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("PostCode")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Straat")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("AdresID");
@@ -41,20 +39,19 @@ namespace VanRijtDataBase.Migrations
                     b.ToTable("Adres");
                 });
 
-            modelBuilder.Entity("VanRijtDataBase.Model.Evenement", b =>
+            modelBuilder.Entity("VanRijtDataBase.Models.Evenement", b =>
                 {
                     b.Property<int>("EvenementID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("AdresID")
+                    b.Property<int?>("AdresID")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Eind")
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("EventNaam")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<int>("MaxBezoekers")
@@ -63,28 +60,29 @@ namespace VanRijtDataBase.Migrations
                     b.Property<DateTime>("Start")
                         .HasColumnType("datetime(6)");
 
+                    b.Property<int?>("UserID")
+                        .HasColumnType("int");
+
                     b.HasKey("EvenementID");
 
                     b.HasIndex("AdresID");
 
+                    b.HasIndex("UserID");
+
                     b.ToTable("Evenement");
                 });
 
-            modelBuilder.Entity("VanRijtDataBase.Model.EvenementData", b =>
+            modelBuilder.Entity("VanRijtDataBase.Models.EvenementData", b =>
                 {
                     b.Property<int>("EvenementDataID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("EvenementID")
+                    b.Property<int?>("EvenementID")
                         .HasColumnType("int");
 
                     b.Property<int>("Instroom")
                         .HasColumnType("int");
-
-                    b.Property<string>("Notitie")
-                        .IsRequired()
-                        .HasColumnType("longtext");
 
                     b.Property<int>("Tempratuur")
                         .HasColumnType("int");
@@ -105,22 +103,41 @@ namespace VanRijtDataBase.Migrations
                     b.ToTable("EvenementData");
                 });
 
-            modelBuilder.Entity("VanRijtDataBase.Model.Login", b =>
+            modelBuilder.Entity("VanRijtDataBase.Models.EvenementVeranderingen", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("EvenementID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Notitie")
+                        .HasColumnType("longtext");
+
+                    b.Property<TimeOnly>("Tijd")
+                        .HasColumnType("time(6)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EvenementID");
+
+                    b.ToTable("EvenementVeranderingen");
+                });
+
+            modelBuilder.Entity("VanRijtDataBase.Models.Login", b =>
                 {
                     b.Property<int>("LoginID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
                     b.Property<string>("Password")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("UserType")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Username")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("LoginID");
@@ -128,25 +145,22 @@ namespace VanRijtDataBase.Migrations
                     b.ToTable("Login");
                 });
 
-            modelBuilder.Entity("VanRijtDataBase.Model.User", b =>
+            modelBuilder.Entity("VanRijtDataBase.Models.User", b =>
                 {
                     b.Property<int>("UserID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
                     b.Property<string>("BedrijfsNaam")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("LoginID")
+                    b.Property<int?>("LoginID")
                         .HasColumnType("int");
 
                     b.Property<string>("Logo")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("TelefoonNummer")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("UserID");
@@ -156,35 +170,44 @@ namespace VanRijtDataBase.Migrations
                     b.ToTable("User");
                 });
 
-            modelBuilder.Entity("VanRijtDataBase.Model.Evenement", b =>
+            modelBuilder.Entity("VanRijtDataBase.Models.Evenement", b =>
                 {
-                    b.HasOne("VanRijtDataBase.Model.Adres", "Adres")
+                    b.HasOne("VanRijtDataBase.Models.Adres", "Adres")
                         .WithMany()
-                        .HasForeignKey("AdresID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("AdresID");
+
+                    b.HasOne("VanRijtDataBase.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserID");
 
                     b.Navigation("Adres");
+
+                    b.Navigation("User");
                 });
 
-            modelBuilder.Entity("VanRijtDataBase.Model.EvenementData", b =>
+            modelBuilder.Entity("VanRijtDataBase.Models.EvenementData", b =>
                 {
-                    b.HasOne("VanRijtDataBase.Model.Evenement", "Evenement")
+                    b.HasOne("VanRijtDataBase.Models.Evenement", "Evenement")
                         .WithMany()
-                        .HasForeignKey("EvenementID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("EvenementID");
 
                     b.Navigation("Evenement");
                 });
 
-            modelBuilder.Entity("VanRijtDataBase.Model.User", b =>
+            modelBuilder.Entity("VanRijtDataBase.Models.EvenementVeranderingen", b =>
                 {
-                    b.HasOne("VanRijtDataBase.Model.Login", "Login")
+                    b.HasOne("VanRijtDataBase.Models.Evenement", "Evenement")
                         .WithMany()
-                        .HasForeignKey("LoginID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("EvenementID");
+
+                    b.Navigation("Evenement");
+                });
+
+            modelBuilder.Entity("VanRijtDataBase.Models.User", b =>
+                {
+                    b.HasOne("VanRijtDataBase.Models.Login", "Login")
+                        .WithMany()
+                        .HasForeignKey("LoginID");
 
                     b.Navigation("Login");
                 });

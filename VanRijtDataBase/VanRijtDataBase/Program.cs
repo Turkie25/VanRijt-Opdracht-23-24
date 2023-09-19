@@ -1,5 +1,6 @@
+global using VanRijtDataBase.Models;
+global using VanRijtDataBase.Services.UserService;
 using Microsoft.EntityFrameworkCore;
-using VanRijtDataBase.Model;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +16,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<IUserService, UserService>();
 
 var app = builder.Build();
 
