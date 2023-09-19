@@ -1,18 +1,21 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using VanRijtDataBase.Models;
 
 namespace VanRijtDataBase.Services.UserService
 {
     public class UserService : IUserService
     {
-        public DBContext _dbContext;
-        public UserService(DBContext dbContext)
+        private readonly DBContext _dbContext;
+        private readonly IMapper _mapper;
+        public UserService(DBContext dbContext,IMapper mapper)
         {
             _dbContext = dbContext;
+            _mapper = mapper;
         }
 
-        public async Task<ServiceResponce<User>> GetUserById(int id)
+        public async Task<ServiceResponce<GetUserResponseDto>> GetUserById(int id)
         {
-            var serviceResponce = new ServiceResponce<User>();
+            var serviceResponce = new ServiceResponce<GetUserResponseDto>();
 
             // Use async method to query the database
             var user = await _dbContext.User.FirstOrDefaultAsync(x => x.UserID == id);
@@ -21,16 +24,16 @@ namespace VanRijtDataBase.Services.UserService
             {
                 throw new Exception("No User Found");
             }
-            serviceResponce.Data = user;
+            serviceResponce.Data = _mapper.Map<GetUserResponseDto>(user);
             return serviceResponce;
         }
 
-        public async Task<ServiceResponce<List<User>>> GetUsers()
+        public async Task<ServiceResponce<List<GetUserResponseDto>>> GetUsers()
         { 
             var users = await _dbContext.User.ToListAsync();
-            var serviceResponce = new ServiceResponce<List<User>>
+            var serviceResponce = new ServiceResponce<List<GetUserResponseDto>>
             {
-                Data = users
+                Data = users.Select(c => _mapper.Map<GetUserResponseDto>(c)).ToList()
             };
             return serviceResponce;
         }
@@ -43,10 +46,7 @@ namespace VanRijtDataBase.Services.UserService
             {
                 Data = newUser
             };
-            
-
-              
-            
+                        
             return serviceResponce;
 
         }
