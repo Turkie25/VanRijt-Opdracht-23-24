@@ -11,5 +11,7 @@
         public string? TelefoonNummer { get; set; }
 
         public string? Logo {  get; set; }
+
+        public string? UserType { get; set; } = null!;
     }
 }

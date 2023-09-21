@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-
-
+using VanRijtDataBase.Dtos.User;
 
 namespace VanRijtDataBase.Controllers
 {
@@ -19,21 +17,21 @@ namespace VanRijtDataBase.Controllers
 
 
         [HttpGet]
-        public async Task<ActionResult<ServiceResponce<List<User>>>> GetUsers()
+        public async Task<ActionResult<ServiceResponse<List<GetUserDto>>>> GetUsers()
         {
             return Ok( await _userService.GetUsers());
         }
 
         [HttpGet("{Id}")]
-        public async Task<ActionResult<ServiceResponce<User>>> GetUserById(int Id)
+        public async Task<ActionResult<ServiceResponse<GetUserDto>>> GetUserById(int Id)
         {
             return Ok(await _userService.GetUserById(Id));
         }
 
         [HttpPost]
-        public async Task<ActionResult<ServiceResponce<User>>> PostUser(User newUser) 
+        public async Task<ActionResult<ServiceResponse<User>>> PostUser(User newUser) 
         { 
-            return  Ok(await _userService.PostUsers(newUser));
+            return  Ok(await _userService.PostUser(newUser));
         }
     }
 

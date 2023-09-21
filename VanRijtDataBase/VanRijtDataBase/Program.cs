@@ -2,8 +2,9 @@ global using VanRijtDataBase.Models;
 global using VanRijtDataBase.Services.UserService;
 global using VanRijtDataBase.Dtos.User;
 global using AutoMapper;
-using Microsoft.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
+using VanRijtDataBase.Repositories.UserRepository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 
 var app = builder.Build();
