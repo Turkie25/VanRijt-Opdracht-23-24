@@ -3478,19 +3478,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\robro\\.nuget\\packages\\": {}
+    "C:\\Users\\jesse\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\xampp\\htdocs\\Github\\VanRijt-Opdracht-23-24\\VanRijtDataBase\\VanRijtDataBase\\VanRijtDataBase.csproj",
+      "projectUniqueName": "C:\\xampp\\htdocs\\GitHub\\VanRijt-Opdracht-23-24\\VanRijtDataBase\\VanRijtDataBase\\VanRijtDataBase.csproj",
       "projectName": "VanRijtDataBase",
-      "projectPath": "C:\\xampp\\htdocs\\Github\\VanRijt-Opdracht-23-24\\VanRijtDataBase\\VanRijtDataBase\\VanRijtDataBase.csproj",
-      "packagesPath": "C:\\Users\\robro\\.nuget\\packages\\",
-      "outputPath": "C:\\xampp\\htdocs\\Github\\VanRijt-Opdracht-23-24\\VanRijtDataBase\\VanRijtDataBase\\obj\\",
+      "projectPath": "C:\\xampp\\htdocs\\GitHub\\VanRijt-Opdracht-23-24\\VanRijtDataBase\\VanRijtDataBase\\VanRijtDataBase.csproj",
+      "packagesPath": "C:\\Users\\jesse\\.nuget\\packages\\",
+      "outputPath": "C:\\xampp\\htdocs\\GitHub\\VanRijt-Opdracht-23-24\\VanRijtDataBase\\VanRijtDataBase\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\robro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jesse\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

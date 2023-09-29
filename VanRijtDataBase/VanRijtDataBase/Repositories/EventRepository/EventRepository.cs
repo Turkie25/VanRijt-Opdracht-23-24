@@ -1,4 +1,6 @@
-﻿namespace VanRijtDataBase.Repositories.EventRepository
+﻿using VanRijtDataBase.Dtos.Event;
+
+namespace VanRijtDataBase.Repositories.EventRepository
 {
     public class EventRepository : IEventRepository
     {
@@ -8,9 +10,9 @@
         {
             _dbContext = dbContext;
         }
-        public async Task PostEvent(Evenement evenement)
+        public async Task PostEvent(PostEventDto evenement)
         {
-            _dbContext.Evenement.Update(evenement);
+            _dbContext.Evenement.Add(evenement);
             await _dbContext.SaveChangesAsync();
         }
     }

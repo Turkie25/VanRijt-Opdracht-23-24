@@ -8,6 +8,7 @@ using System.Text.Json.Serialization;
 using VanRijtDataBase.Repositories.UserRepository;
 using VanRijtDataBase.Repositories.EventRepository;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -26,6 +27,7 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IEventRepository, EventRepository>();
 builder.Services.AddScoped<IEventService, EventService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using VanRijtDataBase.Dtos.Event;
 
 namespace VanRijtDataBase.Controllers
 {
@@ -16,7 +17,7 @@ namespace VanRijtDataBase.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<ServiceResponse<Evenement>>> PostEvent(Evenement evenement)
+        public async Task<ActionResult<ServiceResponse<Evenement>>> PostEvent(PostEventDto evenement)
         {
             return Ok(await _eventService.PostEvent(evenement));
         }

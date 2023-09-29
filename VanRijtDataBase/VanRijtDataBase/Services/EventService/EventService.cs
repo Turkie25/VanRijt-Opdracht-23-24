@@ -1,4 +1,5 @@
-﻿using VanRijtDataBase.Repositories.EventRepository;
+﻿using VanRijtDataBase.Dtos.Event;
+using VanRijtDataBase.Repositories.EventRepository;
 
 namespace VanRijtDataBase.Services.EventService
 {
@@ -13,7 +14,7 @@ namespace VanRijtDataBase.Services.EventService
             _eventRepository = eventRepository;
             _mapper = mapper;
         }
-        public async Task<ServiceResponse<Evenement>> PostEvent(Evenement evenement)
+        public async Task<ServiceResponse<Evenement>> PostEvent(PostEventDto evenement)
         {
             var serviceResponse = new ServiceResponse<Evenement>();
             await _eventRepository.PostEvent(evenement);
