@@ -11,5 +11,11 @@
             Onweer = 5,
             Sneeuw = 6,
         }
+        public enum UserType 
+        {
+            User = 1,
+            Admin = 2,
+            SuperVisor = 3,
+        }
     }
 }

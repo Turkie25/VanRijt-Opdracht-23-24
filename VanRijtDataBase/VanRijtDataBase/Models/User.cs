@@ -12,6 +12,6 @@
 
         public string? Logo {  get; set; }
 
-        public string? UserType { get; set; } = null!;
+        public Enums.UserType UserType { get; set; }
     }
 }
