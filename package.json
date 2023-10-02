@@ -4,8 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "serve": "vue-cli-service serve",
     "start": "vite",
     "build": "vue-tsc && vite build",
+   
     "preview": "vite preview"
   },
   "dependencies": {
