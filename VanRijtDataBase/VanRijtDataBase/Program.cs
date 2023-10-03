@@ -7,7 +7,7 @@ global using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
 using VanRijtDataBase.Repositories.UserRepository;
 using VanRijtDataBase.Repositories.EventRepository;
-
+using VanRijtDataBase.Repositories.AdresRepository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,6 +27,7 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IEventRepository, EventRepository>();
 builder.Services.AddScoped<IEventService, EventService>();
+builder.Services.AddScoped<IAdresRepository, AdresRepository>();
 
 var app = builder.Build();
 

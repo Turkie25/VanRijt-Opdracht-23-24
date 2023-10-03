@@ -2,6 +2,9 @@
 {
     public interface IAdresRepository
     {
-        Task GetAdres(string straat, int huisNummer, int postCode);
+        Task<Adres?> GetAdres(Adres givenAdres);
+
+        Task PostAdres(Adres adres);
+        
     }
 }

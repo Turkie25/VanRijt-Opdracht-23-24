@@ -4,7 +4,7 @@ namespace VanRijtDataBase.Repositories.EventRepository
 {
     public interface IEventRepository
     {
-        Task PostEvent(PostEventDto evenement);
+        Task<Evenement> PostEvent(Evenement evenement);
 
     }
 }

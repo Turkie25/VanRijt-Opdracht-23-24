@@ -1,4 +1,6 @@
-﻿namespace VanRijtDataBase.Repositories.AdresRepository
+﻿using Microsoft.AspNetCore.Http.HttpResults;
+
+namespace VanRijtDataBase.Repositories.AdresRepository
 {
 
         public class AdresRepository : IAdresRepository
@@ -10,16 +12,19 @@
                 _dbContext = dbContext;
             }
 
-            public Adres GetAdres(string straat, int huisNummer, string postCode)
-            {
-                return _dbContext.Adres
-                    .FirstOrDefault(a => a.Straat == straat && a.HuisNummer == huisNummer && a.PostCode == postCode);
-            }
+        public async Task<Adres?> GetAdres(Adres givenAdres)
+        {
+            var adres = await _dbContext.Adres
+                .FirstOrDefaultAsync(a => a.Straat == givenAdres.Straat && a.HuisNummer == givenAdres.HuisNummer && a.PostCode == givenAdres.PostCode);
+            return adres;
+        }
 
-            public void Add(Adres adres)
+
+
+        public async Task PostAdres(Adres adres)
             {
                 _dbContext.Adres.Add(adres);
-                _dbContext.SaveChanges();
+               await _dbContext.SaveChangesAsync();
             }
         }
      

@@ -10,10 +10,11 @@ namespace VanRijtDataBase.Repositories.EventRepository
         {
             _dbContext = dbContext;
         }
-        public async Task PostEvent(PostEventDto evenement)
+        public async Task<Evenement> PostEvent(Evenement evenement)
         {
-            _dbContext.Evenement.Add(evenement);
+            _dbContext.Evenement.Update(evenement);
             await _dbContext.SaveChangesAsync();
+            return evenement;
         }
     }
 }
