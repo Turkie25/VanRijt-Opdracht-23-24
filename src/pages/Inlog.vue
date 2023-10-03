@@ -63,7 +63,7 @@ export default defineComponent({
   },
 });
 </script>
-<style module>
+<style lang="scss" module>
 
 .frame {
   position: absolute;
@@ -115,14 +115,6 @@ export default defineComponent({
   left: 3rem;
   font-weight: 500;
 }
-.inloggen {
-  position: relative;
-  font-size: var(--font-size-7xl);
-  font-weight: 500;
-  font-family: var(--font-inter);
-  color: var(--color-white);
-  text-align: left;
-}
 .inloggenWrapper {
   cursor: pointer;
   border: 1px solid rgba(255, 255, 255, 0.8);
@@ -139,6 +131,15 @@ export default defineComponent({
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
+.inloggen {
+    $white: #ffffff;
+    position: relative;
+    font-size: var(--font-size-7xl);
+    font-weight: 500;
+    font-family: var(--font-inter);
+    color: $white;
+    text-align: left;
+  }
 }
 .frameVtextfield {
   width: 26rem;

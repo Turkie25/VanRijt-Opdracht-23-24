@@ -9,13 +9,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vue/cli-service": "^5.0.8",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6",
     "vuetify": "^3.3.3"
   },
   "devDependencies": {
-    "vite": "^4.3.2",
-    "@vitejs/plugin-vue": "^4.1.0"
+    "@vitejs/plugin-vue": "^4.1.0",
+    "sass": "^1.68.0",
+    "sass-loader": "^13.3.2",
+    "vite": "^4.3.2"
   },
   "main": "index.js",
   "author": "",
