@@ -66,7 +66,7 @@ export default defineComponent({
 
 sendDataToApi() {
     // Define the API URL
-    // const apiUrl = 'https://api.example.com/endpoint';
+    const apiUrl = 'https://localhost:7129/api/Login';
 
     // Define the data to send in the request body
     const requestBody = {
