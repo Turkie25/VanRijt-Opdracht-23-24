@@ -17,9 +17,11 @@
             <div :class="$style.login">Login</div>
             <div :class="$style.email">Email</div>
             <div :class="$style.wachtwoord">Wachtwoord</div>
-            <button :class="$style.inloggenWrapper" id="Submit">
+
+            <button :class="$style.inloggenWrapper" id="Submit" @click="sendLoginDataToApi">
               <div :class="$style.inloggen">Inloggen</div>
             </button>
+            
             <v-text-field
               :class="$style.frameVtextfield"
               color="primary"
@@ -49,6 +51,10 @@
   </div>
 </template>
 <script>
+
+
+
+
 import { defineComponent, ref } from "vue";
 
 export default defineComponent({
@@ -57,6 +63,29 @@ export default defineComponent({
     return { showPasswordGm: false, passwordGm: "" };
   },
   methods: {
+
+sendDataToApi() {
+    // Define the API URL
+    // const apiUrl = 'https://api.example.com/endpoint';
+
+    // Define the data to send in the request body
+    const requestBody = {
+      EMail: 'Email',
+      Password: 'Password',
+    };
+
+    // Send a POST request to the API with the request body
+    axios.post(apiUrl, requestBody)
+      .then((response) => {
+        // Handle the response data here
+        console.log(response.data);
+      })
+      .catch((error) => {
+        // Handle any errors here
+        console.error(error);
+      });
+  },
+
     togglePasswordVisibilityGm() {
       this.showPasswordGm = !this.showPasswordGm;
     },
