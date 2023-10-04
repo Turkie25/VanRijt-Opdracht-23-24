@@ -18,17 +18,23 @@
             <div :class="$style.email">Email</div>
             <div :class="$style.wachtwoord">Wachtwoord</div>
 
-            <button :class="$style.inloggenWrapper" id="Submit" @click="sendLoginDataToApi">
+            <!-- <button :class="$style.inloggenWrapper" id="Submit" @click="sendLoginDataToApi">
               <div :class="$style.inloggen">Inloggen</div>
-            </button>
+            </button> -->
+
+                <button :class="$style.inloggenWrapper" id="Submit" @click="sendLoginDataToApi">
+                  <div :class="$style.inloggen">Inloggen</div>
+                </button>
             
-            <v-text-field
-              :class="$style.frameVtextfield"
-              color="primary"
-              variant="outlined"
-              type="email"
-              name="Email"
-            />
+              <v-text-field
+                :class="$style.frameVtextfield"
+                color="primary"
+                variant="outlined"
+                type="email"
+                name="Email"
+                v-model="email" 
+              />
+
             <div :class="$style.frame5">
               <button :class="$style.wijzigWachtwoord" id="ChangePassword">
                 wijzig wachtwoord
@@ -51,40 +57,45 @@
   </div>
 </template>
 <script>
-
-
-
-
-import { defineComponent, ref } from "vue";
+import axios from 'axios';
+import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "Inlog",
   data() {
-    return { showPasswordGm: false, passwordGm: "" };
+    return {
+      email: '',       // Data property to store the email value
+      passwordGm: '',  // Data property to store the password value
+      showPasswordGm: false,
+    };
   },
   methods: {
+    sendLoginDataToApi() {
+      // Define the API URL
+      const apiUrl = 'https://localhost:7129/api/Login';
 
-sendDataToApi() {
-    // Define the API URL
-    const apiUrl = 'https://localhost:7129/api/Login';
+      // Define the data to send in the request body using the captured values
+      const requestBody = {
+        EMail: this.email,        // Use the email data property
+        Password: this.passwordGm, // Use the passwordGm data property
+      };
 
-    // Define the data to send in the request body
-    const requestBody = {
-      EMail: 'Email',
-      Password: 'Password',
-    };
+      // Define the headers you want to send with the request
+      const headers = {
+        'Content-Type': 'application/json', // Replace with the appropriate content type
+      };
 
-    // Send a POST request to the API with the request body
-    axios.post(apiUrl, requestBody)
-      .then((response) => {
-        // Handle the response data here
-        console.log(response.data);
-      })
-      .catch((error) => {
-        // Handle any errors here
-        console.error(error);
-      });
-  },
+      // Send a POST request to the API with headers and the request body
+      axios.post(apiUrl, requestBody, { headers })
+        .then((response) => {
+          // Handle the response data here
+          console.log(response.data);
+        })
+        .catch((error) => {
+          // Handle any errors here
+          console.error(error);
+        });
+    },
 
     togglePasswordVisibilityGm() {
       this.showPasswordGm = !this.showPasswordGm;
@@ -92,6 +103,7 @@ sendDataToApi() {
   },
 });
 </script>
+
 <style lang="scss" module>
 
 .frame {
