@@ -1,7 +1,27 @@
 <template>
-  <h2>Hello World</h2>
+  <div class="login">
+    <div class="content">
+      <div class="formWrapper">
+        <h1>Login</h1>
+        <form @submit.prevent="submitForm">
+          <div>
+            <label for="email">Email:</label>
+            <input type="email" v-model="email" required>
+          </div>
+          <div>
+            <label for="password">Password:</label>
+            <input type="password" v-model="password" required>
+          </div>
+          <button type="submit" @click="sendLoginDataToApi">Submit</button>
+        </form>
+      </div>
+    </div>
+    <ImageFrame></ImageFrame>
+  </div>
 </template>
 <script>
+import ImageFrame from "../../viewmodel/components/imageFrame.vue";
+import imageFrame from "../../viewmodel/components/imageFrame.vue";
 import { defineComponent, ref } from "vue";
 
 export default defineComponent({
@@ -14,18 +34,10 @@ export default defineComponent({
       this.showPasswordGm = !this.showPasswordGm;
     },
   },
+  components: { ImageFrame }
 });
 </script>
-<style lang="scss" module>
+<style lang="scss">
 @import '../scss/root.scss';
-.imageFrame{
-  position: absolute;
-  inset: 0;
-  min-height: 100%;
-  min-width: 100%;
-  object-fit: cover;
-  background-size: contain;
-  background-image: url(../images/login.png);
-  clip-path: polygon(0 0, 100% 0%, 50% 100%, 0% 100%);
-}
+@import '../scss/login.scss';
 </style>
