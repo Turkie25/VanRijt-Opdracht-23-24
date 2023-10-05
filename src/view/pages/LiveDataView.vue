@@ -4,7 +4,7 @@
 </div>
 </template>
 <script>
-import dataViewCircle from "../../viewmodel/components/DataViewCircle.vue"
+import dataViewCircle from "../../viewmodel/components/dataViewCircle.vue"
 
 export default {
   components: {

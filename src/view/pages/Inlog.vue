@@ -2,7 +2,7 @@
   <div :class="$style.inlog">
 
     <div :class="$style.frame1">
-      <img :class="$style.frameIcon" alt="" src="/frame.svg" />
+      <div :class="$style.imageFrame"></div>
       <div :class="$style.frame2">
         <div :class="$style.frame3">
           <a
@@ -17,16 +17,24 @@
             <div :class="$style.login">Login</div>
             <div :class="$style.email">Email</div>
             <div :class="$style.wachtwoord">Wachtwoord</div>
-            <button :class="$style.inloggenWrapper" id="Submit">
+
+            <!-- <button :class="$style.inloggenWrapper" id="Submit" @click="sendLoginDataToApi">
               <div :class="$style.inloggen">Inloggen</div>
-            </button>
-            <v-text-field
-              :class="$style.frameVtextfield"
-              color="primary"
-              variant="outlined"
-              type="email"
-              name="Email"
-            />
+            </button> -->
+
+                <button :class="$style.inloggenWrapper" id="Submit" @click="sendLoginDataToApi">
+                  <div :class="$style.inloggen">Inloggen</div>
+                </button>
+            
+              <v-text-field
+                :class="$style.frameVtextfield"
+                color="primary"
+                variant="outlined"
+                type="email"
+                name="Email"
+                v-model="email" 
+              />
+
             <div :class="$style.frame5">
               <button :class="$style.wijzigWachtwoord" id="ChangePassword">
                 wijzig wachtwoord
@@ -49,21 +57,55 @@
   </div>
 </template>
 <script>
-import { defineComponent, ref } from "vue";
+import axios from 'axios';
+import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "Inlog",
   data() {
-    return { showPasswordGm: false, passwordGm: "" };
+    return {
+      email: '',       // Data property to store the email value
+      passwordGm: '',  // Data property to store the password value
+      showPasswordGm: false,
+    };
   },
   methods: {
+    sendLoginDataToApi() {
+      // Define the API URL
+      const apiUrl = 'https://localhost:7129/api/Login';
+
+      // Define the data to send in the request body using the captured values
+      const requestBody = {
+        EMail: this.email,        // Use the email data property
+        Password: this.passwordGm, // Use the passwordGm data property
+      };
+
+      // Define the headers you want to send with the request
+      const headers = {
+        'Content-Type': 'application/json', // Replace with the appropriate content type
+      };
+
+      // Send a POST request to the API with headers and the request body
+      axios.post(apiUrl, requestBody, { headers })
+        .then((response) => {
+          // Handle the response data here
+          console.log(response.data);
+        })
+        .catch((error) => {
+          // Handle any errors here
+          console.error(error);
+        });
+    },
+
     togglePasswordVisibilityGm() {
       this.showPasswordGm = !this.showPasswordGm;
     },
   },
 });
 </script>
+
 <style lang="scss" module>
+@import '../scss/root.scss';
 
 .frame {
   position: absolute;
@@ -231,13 +273,23 @@ export default defineComponent({
 }
 .inlog {
   position: relative;
-  background-color: #eef1f6;
+  background-color: $grayLight;
   width: 100%;
   height: 100vh;
   overflow: hidden;
   text-align: left;
   font-size: 2.81rem;
-  color: #049fb4;
+  color: $primary;
   font-family: var(--font-inter);
+}
+.imageFrame{
+  position: absolute;
+  inset: 0;
+  min-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  background-size: contain;
+  background-image: url(../images/login.png);
+  clip-path: polygon(0 0, 100% 0%, 50% 100%, 0% 100%);
 }
 </style>
