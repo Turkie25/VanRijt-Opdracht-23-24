@@ -7,13 +7,14 @@ import * as components from "vuetify/components";
 import * as directives from "vuetify/directives";
 
 import Inlog from "./view/pages/Inlog.vue";
+import Login from "./view/pages/Login.vue";
 import "./global.css";
 
 const routes = [
   {
     path: "/",
-    name: "Inlog",
-    component: Inlog,
+    name: "Login",
+    component: Login,
   },
 ];
 

@@ -2,7 +2,7 @@
   <div :class="$style.inlog">
 
     <div :class="$style.frame1">
-      <img :class="$style.frameIcon" alt="" src="/frame.svg" />
+      <div :class="$style.imageFrame"></div>
       <div :class="$style.frame2">
         <div :class="$style.frame3">
           <a
@@ -105,6 +105,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" module>
+@import '../scss/root.scss';
 
 .frame {
   position: absolute;
@@ -272,13 +273,23 @@ export default defineComponent({
 }
 .inlog {
   position: relative;
-  background-color: #eef1f6;
+  background-color: $grayLight;
   width: 100%;
   height: 100vh;
   overflow: hidden;
   text-align: left;
   font-size: 2.81rem;
-  color: #049fb4;
+  color: $primary;
   font-family: var(--font-inter);
+}
+.imageFrame{
+  position: absolute;
+  inset: 0;
+  min-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  background-size: contain;
+  background-image: url(../images/login.png);
+  clip-path: polygon(0 0, 100% 0%, 50% 100%, 0% 100%);
 }
 </style>

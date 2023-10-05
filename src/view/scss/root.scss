@@ -1,6 +1,6 @@
-//* Dit is de root SCSS file. Hierin worden global variables gedefinieerd die we vervolgens in andere SCSS files en in components kunnen gebruiken.
-
-//& Kleuren
+//* Dit is de root SCSS file. Hierin worden global variables en standaard styling gedefinieerd die we vervolgens in andere SCSS files en in components kunnen gebruiken.
+//& Variables
+//? Kleuren
 $primary: #04A0B5;
 $secondary: #E03076;
 $whiteLight: #ffffff;
@@ -10,5 +10,21 @@ $grayLight: #EEF1F6;
 $grayDark: #353535;
 $black: #000000;
 
-//& Shadows
+//? Shadows
 $boxShadow: -3px 2px 12px 6px hsla(187, 96, 18, 8%); 
+
+
+//& Styling
+html, body{
+    min-height: 100%;
+    position: relative;
+}
+body{
+    margin: 0;
+    overflow: hidden;
+    #app{
+        min-height: 100vh;
+        display: grid;
+        place-content: center;
+    }
+}
