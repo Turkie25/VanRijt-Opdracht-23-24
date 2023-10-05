@@ -1,6 +1,6 @@
 // router.js
 import { createRouter, createWebHistory } from "vue-router";
-import Inlog from "../view/pages/Inlog.vue";
+import Login from "../view/pages/Login.vue";
 import LiveDataSU from "@/view/pages/LiveDataView.vue";
 
 const routes = [
@@ -10,9 +10,9 @@ const routes = [
     component: LiveDataSU,
   },
   {
-    path: "/Inlog",
-    name: "Inlog",
-    component: Inlog,
+    path: "/Login",
+    name: "Login",
+    component: Login,
   },
   // Voeg hier je routes toe
 ];
