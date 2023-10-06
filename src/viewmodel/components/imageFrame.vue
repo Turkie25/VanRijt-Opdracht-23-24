@@ -21,6 +21,6 @@
   object-fit: cover;
   background-size: cover;
   background-image: url(../../view/images/login.png);
-  clip-path: polygon(0 0, 66% 0%, 33% 100%, 0% 100%);
+  clip-path: polygon(0 0, 70% 0%, 58% 100%, 0% 100%);
 }
 </style>

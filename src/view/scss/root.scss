@@ -1,4 +1,8 @@
 //* Dit is de root SCSS file. Hierin worden global variables en standaard styling gedefinieerd die we vervolgens in andere SCSS files en in components kunnen gebruiken.
+//& Imports
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
+
 //& Variables
 //? Kleuren
 $primary: #04A0B5;
@@ -23,8 +27,36 @@ $pLg: 4rem;
 $pXl: 6rem;
 $pXxl: 8rem;
 
+//? Margins
+$mXs: 0.5rem;
+$mSm: 1rem;
+$mMd: 2rem;
+$mLg: 4rem;
+$mXl: 6rem;
+$mXxl: 8rem;
+
+//? Font Family
+$manrope: 'Manrope';
+$inter: 'Inter';
+
+//? Font Weights
+$thin: 100;
+$extraLight: 200;
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semiBold: 600;
+$bold: 700;
+$extraBold: 800;
+$thick: 900;
+
 //? Shadows
 $boxShadow: -3px 2px 12px 6px hsla(187, 96, 18, 8%); 
+
+//? Transitions
+$transitionSm: all 160ms ease-in-out;
+$transitionMd: all 300ms ease-in-out;
+$transitionLg: all 450ms ease-in-out;
 
 
 //& Styling

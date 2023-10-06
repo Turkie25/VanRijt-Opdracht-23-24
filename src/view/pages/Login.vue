@@ -2,17 +2,18 @@
   <div class="login">
     <div class="content">
       <div class="formWrapper">
-        <h1>Login</h1>
         <form @submit.prevent="submitForm">
+          <h1>Inloggen</h1>
           <div>
-            <label for="email">Email:</label>
-            <input type="email" v-model="email" required>
+            <label for="email">Emailadres</label>
+            <input type="email" placeholder="gebruikersnaam@domein.nl" v-model="email" required>
           </div>
           <div>
-            <label for="password">Password:</label>
-            <input type="password" v-model="password" required>
+            <label for="password">Wachtwoord</label>
+            <input type="password" placeholder="********" v-model="password" required>
           </div>
-          <button type="submit" @click="sendLoginDataToApi">Submit</button>
+          <button type="submit" @click="sendLoginDataToApi">Inloggen</button>
+          <span>Geen inloggevens? <a href="">Meer informatie</a></span>
         </form>
       </div>
     </div>
