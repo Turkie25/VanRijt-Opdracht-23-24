@@ -14,6 +14,7 @@ const routes = [
     name: "Login",
     component: Login,
   },
+  
   // Voeg hier je routes toe
 ];
 
