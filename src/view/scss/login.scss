@@ -9,8 +9,17 @@
         grid-template-areas: ". content";
         position: relative;
         z-index: 1;
-        padding-inline: 6rem;
+        padding-inline: $pXl;
         padding-block: 12rem;
+        @media (max-width: $md){
+            grid-template-columns: 1fr;
+            grid-template-areas: "content";
+            padding-inline: 0;
+            margin-inline: $mXxl;
+        }
+        @media (max-width: $sm){
+            margin-inline: $mMd;
+        }
         .formWrapper{
             grid-area: content;
             background: white;

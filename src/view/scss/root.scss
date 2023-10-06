@@ -58,6 +58,12 @@ $transitionSm: all 160ms ease-in-out;
 $transitionMd: all 300ms ease-in-out;
 $transitionLg: all 450ms ease-in-out;
 
+//? Breakpoints
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
 
 //& Styling
 html, body{
