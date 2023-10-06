@@ -17,7 +17,7 @@ export default {
     dataViewCircle,
     dataInformation,
     FestivalBezoekersData,
-    adminPaneluitlogBox,
+    adminPaneluitlogBox
     }
   // ...
 }
