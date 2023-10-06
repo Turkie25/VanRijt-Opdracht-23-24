@@ -14,9 +14,9 @@ import adminPaneluitlogBox from "../../viewmodel/components/adminPaneluitlogBox.
 
 export default {
   components: {
-    // dataViewCircle,
-    // dataInformation,
-    // FestivalBezoekersData,
+    dataViewCircle,
+    dataInformation,
+    FestivalBezoekersData,
     adminPaneluitlogBox,
     }
   // ...
