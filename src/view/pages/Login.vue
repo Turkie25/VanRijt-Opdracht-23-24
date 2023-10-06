@@ -14,7 +14,14 @@ export default defineComponent({
       this.showPasswordGm = !this.showPasswordGm;
     },
   },
+<<<<<<< Updated upstream
 });
+=======
+
+
+})
+
+>>>>>>> Stashed changes
 </script>
 <style lang="scss" module>
 @import '../scss/root.scss';

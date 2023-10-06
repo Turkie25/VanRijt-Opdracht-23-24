@@ -1,6 +1,7 @@
 // router.js
 import { createRouter, createWebHistory } from "vue-router";
 import Login from "../view/pages/Login.vue";
+import Example from "../view/pages/Example.vue";
 import LiveDataSU from "@/view/pages/LiveDataView.vue";
 
 const routes = [
@@ -13,6 +14,11 @@ const routes = [
     path: "/Login",
     name: "Login",
     component: Login,
+  },
+  {
+    path: "/Example",
+    name: "Example",
+    component: Example,
   },
   // Voeg hier je routes toe
 ];
