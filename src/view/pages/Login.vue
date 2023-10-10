@@ -14,7 +14,7 @@
 
           </div>
           <button type="submit" @click="sendLoginDataToApi">Inloggen</button>
-          <span>Geen inloggevens? <a href="">Meer informatie</a></span>
+          <a href="">Ik ben mijn wachtwoord vergeten</a>
         </form>
       </div>
     </div>
