@@ -2,13 +2,13 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Login from "../view/pages/Login.vue";
 import Example from "../view/pages/Example.vue";
-import LiveDataSU from "@/view/pages/LiveDataView.vue";
+import LiveDataView from "@/view/pages/LiveDataView.vue";
 
 const routes = [
   {
     path: "/",
-    name: "Home",
-    component: LiveDataSU,
+    name: "LiveDataView",
+    component: LiveDataView
   },
   {
     path: "/Login",
@@ -16,7 +16,7 @@ const routes = [
     component: Login,
   },
   {
-    path: "/Example",
+    path: "/example",
     name: "Example",
     component: Example,
   },

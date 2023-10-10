@@ -72,6 +72,8 @@ export default defineComponent(
                 .peopleCounter{
                     grid-area: aantal;
                     background-color: aquamarine;
+                    height: 100%;
+                    width: 100%;
                 }
                 .instroom{
                     grid-area: instroom;

@@ -33,24 +33,23 @@ export default {
   },
   methods: {
     calculateCircle() {
-      // Your calculation logic here
     }
   }
 };
 </script>
 
-<style scoped>
-/* Your component-specific styles go here */
+<style lang="scss" scoped>
+@import '@/view/scss/root.scss';
 
 /* Container Styles */
 .DataViewCircle {
   display: flex;
   flex-direction: column;
-  background-color: #04a0b5;
+  background-color: $primary;
   font-family: Manrope;
-  color: white;
-  height: 370px;
-  width: 250px;
+  color: $whiteLight;
+  height: 100%;
+  width: 100%;
   filter: drop-shadow(-3px 2px 12px 6px rgba(2, 81, 92, 0.08));
   border-radius: 5%;
 
@@ -65,8 +64,8 @@ export default {
 .CircularProgress {
   position: relative;
   display: flex;
-  height: 200px;
-  width: 200px;
+  height: 80%;
+  width: 80%;
   justify-content: center;
   align-items: center;
   margin: 20% auto auto auto; /* Adjust margin as needed */
@@ -76,10 +75,10 @@ export default {
 .CircularProgress::before {
   content: "";
   position: absolute;
-  height: 180px;
-  width: 180px;
+  height: 75%;
+  width: 75%;
   border-radius: 50%;
-  background-color: #04a0b5;
+  background-color: $primary;
 }
 
 /* Progress Value Styles */
@@ -89,7 +88,7 @@ export default {
 
 /* Number Styles */
 .Max {
-  color: #E03076;
+  color: $secondary;
 }
 </style>
 

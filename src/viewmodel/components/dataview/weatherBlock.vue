@@ -7,7 +7,6 @@
 <style scoped>
 
 .weatherBlock{
-position: absolute;
 width: 396px;
 height: 205px;
 left: 500px; /* verwijder dit */

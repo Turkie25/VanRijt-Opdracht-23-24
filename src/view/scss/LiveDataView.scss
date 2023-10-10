@@ -1,13 +1,102 @@
-html {
-   
+@import '../../view/scss/root.scss';
+.dataview{
+display: flex;
+width: 100%;
+    .dataviewOverlay{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        grid-template-rows: 1fr 3fr 2fr;
+        grid-template-areas: 
+        "header header"
+        "datablocks datablocks"
+        "graph graph"
+        ;
+        background-color: $grayLight;
+        padding:0 3% 0 3%;
+        header {
+            height: 80%;
+            grid-area: header;
+                border: red 2px solid;
+            display: grid;
+            grid-template-columns: 2fr;
+            grid-template-areas: "logo dropdown";
+
+
+
+            .logo{
+                grid-area: logo;
+                border: red 2px solid;
+                height: 70%;
+                width: fit-content; 
+                align-items: center; 
+                justify-content: right;
+                align-self: center;
+             }
+            .dropdown{
+                grid-area: dropdown;
+                border: red 2px solid;
+                height: 70%;
+                width: fit-content;
+                align-items: center; 
+                justify-content: right;
+                align-self: center;
+
+            }
+        }
+        
+        .datablocks{
+            grid-area: datablocks;
+            border: red 2px solid;
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: 1fr 3fr;
+            grid-template-areas: "dataviewcircle blockwrapper";
+            height: 100%;
+
+            .dataViewCircle{
+                grid-area: dataviewcircle;
+                background: $primary;
+            }
+            .blockWrapper{
+                grid-area: blockwrapper;
+                display: grid;
+                gap: 1rem;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: minmax(auto, 1fr) auto;
+                grid-template-areas: 
+                "aantal aantal aantal"
+                "instroom uitstroom trend"
+                ;
+                .peopleCounter{
+                    grid-area: aantal;
+                    background-color: aquamarine;
+                }
+                .instroom{
+                    grid-area: instroom;
+                    background-color: aqua;
+                }
+                .uitstroom{
+                    grid-area: uitstroom;
+                    background-color:bisque;  
+                }
+                .trend{
+                    grid-area: trend;
+                    background-color:teal;
+                }
+                .instroom, .uitstroom, .trend{
+                    aspect-ratio: 1 / 1;
+                }
+            }
+        }
+        .graph{
+            grid-area: graph;
+            border: red 2px solid;
+        }
+    }
+
+    .informationOverlay {
+        width: 40%;
+    }
 }
-
-
-.LiveDataView {
-    height: 100vh;
-    width: 100%;
-    background-color: #EEF1F6;
-    justify-content: center;
-
-}
-
