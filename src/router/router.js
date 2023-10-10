@@ -5,14 +5,14 @@ import LiveDataSU from "@/view/pages/LiveDataView.vue";
 
 const routes = [
   {
-    path: "/",
-    name: "Home",
-    component: LiveDataSU,
-  },
-  {
     path: "/Login",
     name: "Login",
     component: Login,
+  },
+  {
+    path: "/",
+    name: "Home",
+    component: LiveDataSU,
   },
   // Voeg hier je routes toe
 ];
