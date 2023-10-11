@@ -10,8 +10,11 @@
   },
   "dependencies": {
     "@vue/cli-service": "^5.0.8",
+    "apexcharts": "^3.43.0",
     "axios": "^1.5.1",
-    "vue": "^3.2.47",
+    "chart.js": "^4.4.0",
+    "vue": "^3.3.4",
+    "vue-chartjs": "^5.2.0",
     "vue-router": "^4.2.5",
     "vuetify": "^3.3.3"
   },
