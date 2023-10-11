@@ -1,51 +1,53 @@
+<template>
+    <div class="dataview">
+        <div class="logo"></div>
+        <div class="dropdown"></div>
+        <div class="datablocks">
+            <div class="dataViewCircle">
+            </div>
+            <div class="blockWrapper">
+                <div class="peopleCounter"></div>
+                <div class="block instroom"></div>
+                <div class="block uitstroom"></div>
+                <div class="block trend"></div>
+            </div>
+        </div>
+        <div class="graph">
+
+        </div>
+    </div>
+</template><script>
+import { defineComponent } from 'vue';
+
+export default defineComponent(
+    {
+        name: "Example",
+    }
+)
+</script>
+<style lang="scss">
 @import '../../view/scss/root.scss';
-.dataview{
-display: flex;
-width: 100%;
-    .dataviewOverlay{
-        width: 100%;
+    .dataview{
+        width: 70%;
         height: 100%;
         display: grid;
-        grid-template-columns: 1fr 1fr ;
+        grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 3fr 2fr;
         grid-template-areas: 
-        "header header"
+        "logo dropdown"
         "datablocks datablocks"
         "graph graph"
         ;
-        background-color: $grayLight;
-        padding:0 3% 0 3%;
-        header {
-            height: 80%;
-            grid-area: header;
-                border: red 2px solid;
-            display: grid;
-            grid-template-columns: 2fr;
-            grid-template-areas: "logo dropdown";
+        .logo{
+            grid-area: logo;
+            border: red 2px solid;
 
-
-
-            .logo{
-                grid-area: logo;
-                border: red 2px solid;
-                height: 70%;
-                width: fit-content; 
-                align-items: center; 
-                justify-content: right;
-                align-self: center;
-             }
-            .dropdown{
-                grid-area: dropdown;
-                border: red 2px solid;
-                height: 70%;
-                width: fit-content;
-                align-items: center; 
-                justify-content: right;
-                align-self: center;
-
-            }
         }
-        
+        .dropdown{
+            grid-area: dropdown;
+            border: red 2px solid;
+
+        }
         .datablocks{
             grid-area: datablocks;
             border: red 2px solid;
@@ -53,8 +55,6 @@ width: 100%;
             gap: 1rem;
             grid-template-columns: 1fr 3fr;
             grid-template-areas: "dataviewcircle blockwrapper";
-            height: 100%;
-
             .dataViewCircle{
                 grid-area: dataviewcircle;
                 background: $primary;
@@ -72,6 +72,8 @@ width: 100%;
                 .peopleCounter{
                     grid-area: aantal;
                     background-color: aquamarine;
+                    height: 100%;
+                    width: 100%;
                 }
                 .instroom{
                     grid-area: instroom;
@@ -93,10 +95,7 @@ width: 100%;
         .graph{
             grid-area: graph;
             border: red 2px solid;
+
         }
     }
-
-    .informationOverlay {
-        width: 40%;
-    }
-}
+</style>

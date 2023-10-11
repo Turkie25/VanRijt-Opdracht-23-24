@@ -7,7 +7,7 @@ $whiteLight: #ffffff;
 $whiteDark: #202020;
 $offWhite: #CCCCCC;
 $grayLight: #EEF1F6;
-$grayDark: #353535;
+$grayDark: #120404;
 $black: #000000;
 
 //? Shadows
@@ -25,6 +25,8 @@ body{
     #app{
         min-height: 100vh;
         display: grid;
-        place-content: center;
-    }
+    }   
 }
+
+// @import '@/view/scss/root.scss';
+// Dit is de import die je kunt importeren om deze file toe te voegen voor in de views
