@@ -1,0 +1,96 @@
+@import 'root.scss';
+.login{
+    min-height: 100vh;
+    height: 100vh;
+    .content{
+        min-height: 100%;
+        display: grid;
+        grid-template-columns: 7fr 2.5fr;
+        grid-template-areas: ". content";
+        position: relative;
+        z-index: 1;
+        padding-inline: $pXl;
+        padding-block: 12rem;
+        @media (max-width: $md){
+            grid-template-columns: 1fr;
+            grid-template-areas: "content";
+            padding-inline: 0;
+            margin-inline: $mXxl;
+        }
+        @media (max-width: $sm){
+            margin-inline: $mMd;
+        }
+        .formWrapper{
+            grid-area: content;
+            background: white;
+            box-shadow: $boxShadow;
+            width: 100%;
+            height: 100%;
+            border-radius: $borderRadiusMd;
+            padding: $pMd;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            form{
+                h1{
+                    padding-bottom: $pMd;
+                    font-size: 1.5rem;
+                }
+                min-width: 100%;
+                min-height: 100%;
+                >div{
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    label{
+                        padding-bottom: $pSm;
+                        font-weight: $medium;
+                        &::after{
+                            content: "*";
+                            color: $secondary;
+                        }
+                    }
+                    input{
+                        border: 2px solid $black;
+                        border-radius: $borderRadiusMd;
+                        padding: $pXs $pSm;
+                        &::placeholder{
+                            color: $primary;
+                        }
+                    }
+                }
+                >*{
+                    padding-bottom: $pMd;
+                }
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                button{
+                    background-color: $primary;
+                    color: $whiteLight;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    padding: $pXs $pMd;
+                    width: 100%;
+                    border-radius: $borderRadiusLg;
+                    margin-bottom: $mSm;
+                    transition: $transitionSm;
+                    &:hover{
+                        filter: brightness(1.20);
+                    }
+                }
+                a{
+                    color: $primary;
+                    font-weight: $medium;
+                    transition: $transitionSm;
+                    &:hover{
+                        filter: brightness(1.20);
+                    }
+                }
+            }
+        }
+    }
+}
