@@ -9,24 +9,21 @@
         <div class="datablocks">
           <dataViewCircle class="dataViewCircle"></dataViewCircle>
           <div class="blockWrapper">
-                <div class="peopleCounter"></div>
+            <visitorCount class="peopleCounter"></visitorCount>
                 <div class="block instroom"></div>
                 <div class="block uitstroom"></div>
                 <div class="block trend"></div> 
             </div>
         </div>
-        <div class="graph">
-        </div>
+        <dataGraph class="graph"></dataGraph> 
     </section>
 
     <section class="informationOverlay">
-  <realTimeClock></realTimeClock>
+  <realTimeClock class="realTimeClock"></realTimeClock>
   <weatherBlock></weatherBlock>
   <h3 class="Information">Informatie</h3>
-  <weatherBlock></weatherBlock>
-  <weatherBlock></weatherBlock>
-
-  
+  <dataInformation class="dataInformation"></dataInformation>  
+  <FestivalBezoekersData class="FestivalBezoekersData"></FestivalBezoekersData>
 </section>  
 
 </div>
@@ -36,9 +33,14 @@ import dataViewCircle from "../../viewmodel/components/dataview/dataViewCircle.v
 import realTimeClock  from "../../viewmodel/components/dataview/realTimeClock.vue"
 import weatherBlock  from "../../viewmodel/components/dataview/weatherBlock.vue"
 import profilePicture from "../../viewmodel/components/dataview/profilePicture.vue"
+import FestivalBezoekersData from "../../viewmodel/components/dataview/FestivalBezoekersData.vue"
+import dataInformation from "../../viewmodel/components/dataview/dataInformation.vue"
+import visitorCount from "../../viewmodel/components/dataview/visitorCount.vue"
+import dataGraph from "../../viewmodel/components/dataview/dataGraph.vue"
+
 export default {
   components: {
-    dataViewCircle, realTimeClock, weatherBlock, profilePicture
+    dataViewCircle, realTimeClock, weatherBlock, profilePicture, FestivalBezoekersData, dataInformation, visitorCount, dataGraph 
     }
   // ...
 }

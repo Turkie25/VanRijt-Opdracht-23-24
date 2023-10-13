@@ -33,7 +33,7 @@
   <style scoped>  
   h2{
     color: #04A0B5;
-    font-size: 96px;
+    font-size: 13vh;
     font-family: 'Manrope';
   }
   </style>

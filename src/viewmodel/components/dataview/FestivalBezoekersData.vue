@@ -36,20 +36,20 @@ export default {
 
 
 <style lang="scss">
-@import '../../view/scss/root.scss';
+@import '../../../view//scss/root.scss';
 
 /* Container Styles */
 .BezoekersBox {
   display: flex;
   flex-direction: column;
   background-color: $grayLight;
-  font-family: Manrope;
-
+  font-weight: $thick;
   color: black;
-  height: 260px;
-  width: 396px;
+  height: fit-content;
+  width: 85%;
   filter: drop-shadow(-3px 2px 12px 6px rgba(2, 81, 92, 0.08));
   border-radius: 5%;
+  margin: auto auto auto auto; 
 
 }
 
@@ -73,10 +73,14 @@ export default {
 
 .WijzigenButton{
   background-color: $primary;
-  width: 365px;
-  height: 50px;
+  width: 80%;
+  height: 6vh;
   color: white;
   margin: 6% auto 0 auto;
   border-radius: 16px;
+
+  font-size: 18px;
+  font-weight: $regular;
+  margin-bottom: 2%;
 }
 </style>

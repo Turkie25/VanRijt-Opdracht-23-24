@@ -7,11 +7,12 @@
 <style scoped>
 
 .weatherBlock{
-width: 396px;
-height: 205px;
+width: 85%;
+height: 20%;
 left: 500px; /* verwijder dit */
 background: #515151;
 border-radius: 16px;
+margin: 0 auto; 
 
 }
 

@@ -97,6 +97,21 @@ width: 100%;
     }
 
     .informationOverlay {
+        display: block;
         width: 40%;
+
+        .realTimeClock h2{
+            margin: 5%;
+        }
+
+        .dataInformation {
+            margin-bottom: $mMd;
+            ;
+        }
+
+        .FestivalBezoekersData {
+
+        }
+            
     }
 }

@@ -23,21 +23,19 @@ export default {
 
 
 <style lang="scss">
-@import '../../view/scss/root.scss';
+@import '../../../view//scss/root.scss';
 
 /* Container Styles */
 .InformationBox {
   display: flex;
   flex-direction: column;
   background-color: $grayLight;
-  font-family: Manrope;
-
   color: black;
-  height: 144px;
-  width: 396px;
+  height: fit-content;
+  width: 85%;
   filter: drop-shadow(-3px 2px 12px 6px rgba(2, 81, 92, 0.08));
   border-radius: 5%;
-
+  margin: 0 auto 0 auto; 
 }
 
 /* Text Styles */
@@ -51,10 +49,11 @@ export default {
 }
 
 .InstroomColor {
-    color: $primary;
+  color: $primary;
 }
 
 .UitstroomColor {
-    color: $secondary;
+  color: $secondary;
 }
+
 </style>
