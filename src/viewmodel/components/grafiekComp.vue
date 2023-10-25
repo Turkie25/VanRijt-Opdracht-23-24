@@ -45,7 +45,7 @@ export default {
 @import "../../view/scss/root.scss";
 
 .Grafiek {
-  width: 1069px;
-  height: 390px;
+  width: 100%;
+  height: 100%;
 }
 </style>

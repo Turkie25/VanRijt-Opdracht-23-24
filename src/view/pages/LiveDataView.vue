@@ -15,7 +15,9 @@
                 <trend class="block trend"></trend> 
             </div>
         </div>
-        <dataGraph class="graph"></dataGraph> 
+        <dataGraph class="graph">
+        <Grafiek></Grafiek>
+        </dataGraph> 
     </section>
 
     <section class="informationOverlay">
@@ -40,13 +42,14 @@ import inflow from "../../viewmodel/components/dataview/inflow.vue"
 import outflow from "../../viewmodel/components/dataview/outflow.vue"
 import trend from "../../viewmodel/components/dataview/trend.vue"
 
-
+import Grafiek from "../../viewmodel/components/grafiekComp.vue"
+import { Bar } from 'vue-chartjs'
 
 export default {
   components: {
     dataViewCircle, realTimeClock, weatherBlock, profilePicture, 
     FestivalBezoekersData, dataInformation, inflow, outflow, trend,
-    visitorCount
+    visitorCount,Grafiek
     }
   // ...
 }
