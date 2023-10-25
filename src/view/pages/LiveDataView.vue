@@ -10,9 +10,9 @@
           <dataViewCircle class="dataViewCircle"></dataViewCircle>
           <div class="blockWrapper">
             <visitorCount class="peopleCounter"></visitorCount>
-                <div class="block instroom"></div>
-                <div class="block uitstroom"></div>
-                <div class="block trend"></div> 
+                <inflow class="block instroom"></inflow>
+                <outflow class="block uitstroom"></outflow>
+                <trend class="block trend"></trend> 
             </div>
         </div>
         <dataGraph class="graph"></dataGraph> 
@@ -36,11 +36,17 @@ import profilePicture from "../../viewmodel/components/dataview/profilePicture.v
 import FestivalBezoekersData from "../../viewmodel/components/dataview/FestivalBezoekersData.vue"
 import dataInformation from "../../viewmodel/components/dataview/dataInformation.vue"
 import visitorCount from "../../viewmodel/components/dataview/visitorCount.vue"
-import dataGraph from "../../viewmodel/components/dataview/dataGraph.vue"
+import inflow from "../../viewmodel/components/dataview/inflow.vue"
+import outflow from "../../viewmodel/components/dataview/outflow.vue"
+import trend from "../../viewmodel/components/dataview/trend.vue"
+
+
 
 export default {
   components: {
-    dataViewCircle, realTimeClock, weatherBlock, profilePicture, FestivalBezoekersData, dataInformation, visitorCount, dataGraph 
+    dataViewCircle, realTimeClock, weatherBlock, profilePicture, 
+    FestivalBezoekersData, dataInformation, inflow, outflow, trend,
+    visitorCount
     }
   // ...
 }

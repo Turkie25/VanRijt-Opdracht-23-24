@@ -1,6 +1,6 @@
 <template>
   <div class="InformationBox">
-    <h2 class="FestivalText">{{ EventNaam }}</h2>
+    <h2 class="FestivalLabel">{{ EventNaam }}</h2>
      <div>
         <h3 class='In-Uit-stroomText'>Instroom: <span class='InstroomColor'>{{ Instroom }}</span></h3>
         <h3 class='In-Uit-stroomText'>Uitsroom: <span class='UitstroomColor'>{{ Uitstroom }}</span></h3>
@@ -33,19 +33,21 @@ export default {
   color: black;
   height: fit-content;
   width: 85%;
-  filter: drop-shadow(-3px 2px 12px 6px rgba(2, 81, 92, 0.08));
   border-radius: 5%;
   margin: 0 auto 0 auto; 
+  box-shadow: -3px 2px 12px 6px rgba(124, 124, 124, 0.09);
+
 }
 
 /* Text Styles */
-.FestivalText {
+.FestivalLabel {
   margin: 3% auto 0 5%;
   margin-bottom: 2%;
 }
 
 .In-Uit-stroomText {
   margin: 2% auto 0 5%;
+  font-weight: $medium;
 }
 
 .InstroomColor {

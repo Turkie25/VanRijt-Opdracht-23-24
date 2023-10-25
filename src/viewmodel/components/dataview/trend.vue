@@ -1,20 +1,19 @@
 <template>
-  <div class="trend">
     <div class="trend-block">
       <div class="trend-label">
           Trend
       </div>
       <div class="trend-icon">
-        <img class="trend-images" v-if="instroomNummer > uitstroomNummer" src="../../view/images/trending-up-regular-24.png" alt="Gaat omhoog">
-        <img  class="trend-images" v-if="instroomNummer < uitstroomNummer" src="../../view/images/trending-down-regular-24.png" alt="Gaat omlaag">
-        <img  class="trend-images" v-if="instroomNummer === uitstroomNummer" src="../../view/images/sort-alt-2-regular-24.png" alt="Is gelijk">
+        <img class="trend-images" v-if="instroomNummer > uitstroomNummer" src="../../../view/images/bx-trending-down.png" alt="Gaat omhoog">
+        <img  class="trend-images" v-if="instroomNummer < uitstroomNummer" src="../../../view/images/bx-trending-down.png" alt="Gaat omlaag">
+        <img  class="trend-images" v-if="instroomNummer === uitstroomNummer" src="../../../view/images/bx-trending-down.png" alt="Is gelijk">
       </div>
     </div>
-  </div>
 </template>
 
 <script>
 import "https://unpkg.com/boxicons@2.1.4/dist/boxicons.js";
+import "../../../view/images/bx-trending-down.png";
 
 export default {
   data() {
@@ -44,10 +43,8 @@ export default {
   font-size: 2vw;
   margin: auto;
   aspect-ratio: 1 / 1;
-  position: absolute;
-  height: 20vh;
-  right: 52vw;
-  top: 20vh;
+  height: 100%;
+  width: 100%;
   background: #FFFFFF;
   box-shadow: -3px 2px 12px 6px rgba(2, 81, 92, 0.08);
   border-radius: 16px;

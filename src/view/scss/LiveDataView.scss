@@ -69,21 +69,22 @@ width: 100%;
                 "aantal aantal aantal"
                 "instroom uitstroom trend"
                 ;
+                
                 .peopleCounter{
                     grid-area: aantal;
-                    background-color: aquamarine;
+                    background-color: rgb(255, 255, 255);
                 }
                 .instroom{
                     grid-area: instroom;
-                    background-color: aqua;
+                    background-color: rgb(255, 255, 255);
                 }
                 .uitstroom{
                     grid-area: uitstroom;
-                    background-color:bisque;  
+                    background-color:rgb(255, 255, 255);  
                 }
                 .trend{
                     grid-area: trend;
-                    background-color:teal;
+                    background-color:rgb(255, 255, 255);  
                 }
                 .instroom, .uitstroom, .trend{
                     aspect-ratio: 1 / 1;
@@ -100,6 +101,12 @@ width: 100%;
         display: block;
         width: 40%;
 
+        .realTimeClock {
+            display: flex;
+            height: 20%;
+            align-items: center;
+            justify-content: center;
+        }
         .realTimeClock h2{
             margin: 5%;
         }
@@ -109,9 +116,7 @@ width: 100%;
             ;
         }
 
-        .FestivalBezoekersData {
-
-        }
+        
             
     }
 }

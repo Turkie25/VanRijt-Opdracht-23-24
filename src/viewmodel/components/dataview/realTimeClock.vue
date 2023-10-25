@@ -31,6 +31,12 @@
   </script>
   
   <style scoped>  
+
+.realTimeClock {
+  height: 100%;
+    width: 100%;
+}
+
   h2{
     color: #04A0B5;
     font-size: 13vh;

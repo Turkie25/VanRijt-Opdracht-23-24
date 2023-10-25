@@ -1,16 +1,13 @@
 <template>
   <div class="DataViewCircle">
     <h2 class="ActueleBezoekersText">Actuele bezoekers</h2>
-    <div class="Container">
       <div class="CircularProgress" :style="circleStyle">
         <div class="ProgressValue">
           <div class="CurrentValue">Huidig</div> {{ current }}
           <div class="MaxValue"><p class="Max">Max {{ max }}</p></div>
-
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -52,7 +49,6 @@ export default {
   width: 100%;
   filter: drop-shadow(-3px 2px 12px 6px rgba(2, 81, 92, 0.08));
   border-radius: 5%;
-
 }
 
 /* Text Styles */
@@ -64,8 +60,8 @@ export default {
 .CircularProgress {
   position: relative;
   display: flex;
-  height: 80%;
   width: 80%;
+  aspect-ratio: 1 / 1;
   justify-content: center;
   align-items: center;
   margin: 20% auto auto auto; /* Adjust margin as needed */
@@ -75,8 +71,8 @@ export default {
 .CircularProgress::before {
   content: "";
   position: absolute;
-  height: 75%;
-  width: 75%;
+  height: 85%;
+  width: 85%;
   border-radius: 50%;
   background-color: $primary;
 }

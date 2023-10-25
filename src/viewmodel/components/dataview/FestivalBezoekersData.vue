@@ -50,6 +50,7 @@ export default {
   filter: drop-shadow(-3px 2px 12px 6px rgba(2, 81, 92, 0.08));
   border-radius: 5%;
   margin: auto auto auto auto; 
+  box-shadow: -3px 2px 12px 6px rgba(2, 81, 92, 0.08);
 
 }
 
@@ -61,6 +62,7 @@ export default {
 
 .BezoekersInfoText {
   margin: 2% auto 0 5%;
+  font-weight: $medium;
 }
 
 .InstroomColor {
@@ -82,5 +84,6 @@ export default {
   font-size: 18px;
   font-weight: $regular;
   margin-bottom: 2%;
+  border: none;
 }
 </style>
