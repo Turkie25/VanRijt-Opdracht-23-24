@@ -1,25 +1,26 @@
 <template>
-    <div class="trend-block">
+  <div class="trend-block">
       <div class="trend-label">
-          Trend
+          Trend:
       </div>
+      <div class="trend-call">
+            {{ invoer < uitvoer ? "Uitstromend" : (invoer > uitvoer ? "Instromend" : "Hetzelfde") }}
+        </div>
       <div class="trend-icon">
-        <img class="trend-images" v-if="instroomNummer > uitstroomNummer" src="../../../view/images/bx-trending-down.png" alt="Gaat omhoog">
-        <img  class="trend-images" v-if="instroomNummer < uitstroomNummer" src="../../../view/images/bx-trending-down.png" alt="Gaat omlaag">
-        <img  class="trend-images" v-if="instroomNummer === uitstroomNummer" src="../../../view/images/bx-trending-down.png" alt="Is gelijk">
+          <img class="trend-images" v-if="invoer > uitvoer" src="../../../view/images/trending-up.png" alt="Gaat omhoog">
+          <img class="trend-images" v-if="invoer < uitvoer" src="../../../view/images/trending-down.png" alt="Gaat omlaag">
+          <img class="trend-images" v-if="invoer === uitvoer" src="../../../view/images/trending-same.png" alt="Is gelijk">
       </div>
-    </div>
+  </div>
 </template>
 
 <script>
-import "https://unpkg.com/boxicons@2.1.4/dist/boxicons.js";
-import "../../../view/images/bx-trending-down.png";
 
 export default {
   data() {
     return {
-      invoer: 22, // de invoer is waar je de API aan linkt en stuurt dan de cijfers naar instroomNummer
-      uitvoer: 22
+      invoer: 12, // de invoer is waar je de API aan linkt en stuurt dan de cijfers naar instroomNummer
+      uitvoer: 11
     };
   },
   computed: {
@@ -56,10 +57,13 @@ export default {
   display: flex;
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
+  .trend-icon{
+    object-fit: contain;
+  }
 }
 
 .trend-images {
-  width: 70px;
+  width: 110px;
   text-align: center;
   aspect-ratio: 1 / 1;
 }
