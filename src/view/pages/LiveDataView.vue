@@ -3,7 +3,7 @@
     <section class="dataviewOverlay">
       <header >
         <profilePicture class="logo"></profilePicture>
-        <profilePicture class="dropdown"></profilePicture>
+        <eventDropDown class="dropdown"></eventDropDown>
       </header>
         <div class="dropdown"></div>   
         <div class="datablocks">
@@ -41,6 +41,7 @@ import visitorCount from "../../viewmodel/components/dataview/visitorCount.vue"
 import inflow from "../../viewmodel/components/dataview/inflow.vue"
 import outflow from "../../viewmodel/components/dataview/outflow.vue"
 import trend from "../../viewmodel/components/dataview/trend.vue"
+import eventDropDown from "../../viewmodel/components/dataview/eventdropdown.vue"
 
 import Grafiek from "../../viewmodel/components/grafiekComp.vue"
 import { Bar } from 'vue-chartjs'
@@ -49,8 +50,8 @@ export default {
   components: {
     dataViewCircle, realTimeClock, weatherBlock, profilePicture, 
     FestivalBezoekersData, dataInformation, inflow, outflow, trend,
-    visitorCount,Grafiek
-    }
+    visitorCount,Grafiek, eventDropDown
+  }
   // ...
 }
 </script>

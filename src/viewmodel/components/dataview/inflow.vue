@@ -7,9 +7,9 @@
 </template>
 
 <script>
+import cameraData2 from "../../../model/cameraData.js"
 
 export default {
-  
   data() {
     return {
       invoer: 33 // de invoer is waar je de api aan linked en stuurt dan de cijfers naar instroomnummer
@@ -19,8 +19,26 @@ export default {
     instroomNummer() {
       return this.invoer; 
     }
+  },
+  methods: {
+  async fetchCameraData() {
+    console.log("hallo");
+
+    try {
+      const cameraData = await cameraData2();
+      console.log("Fetched Camera Data:", cameraData); // Log the data to the console
+      this.cameraData = cameraData; // Store the data in a component data property
+    } catch (error) {
+      console.error("Error fetching camera data:", error);
+    }
+  }
+},
+created() {
+    this.fetchCameraData(); // Call the method when the component is created
   }
 };
+
+
 </script>
 
 <style lang="scss" scoped>
@@ -28,7 +46,7 @@ export default {
 .square-block {
     height: 100%; 
     right: 100%; 
-    top: 20vh; /* Gebruik vh om de positie te schalen met de viewport */
+    top: 100%; /* Gebruik vh om de positie te schalen met de viewport */
   
     /* Dropshadow */
     box-shadow: -3px 2px 12px 6px rgba(2, 81, 92, 0.08);
