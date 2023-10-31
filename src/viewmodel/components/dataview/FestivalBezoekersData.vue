@@ -45,8 +45,6 @@ export default {
   background-color: $grayLight;
   font-weight: $thick;
   color: black;
-  height: fit-content;
-  width: 85%;
   filter: drop-shadow(-3px 2px 12px 6px rgba(2, 81, 92, 0.08));
   border-radius: 5%;
   margin: auto auto auto auto; 
@@ -58,11 +56,15 @@ export default {
 .BezoekersText {
   margin: 5% auto 0 5%;
   margin-bottom: 2%;
+  font-size: 3vh;
+  font-size: 2.5vh;
 }
 
 .BezoekersInfoText {
   margin: 2% auto 0 5%;
   font-weight: $medium;
+  font-size: 2.5vh;
+
 }
 
 .InstroomColor {

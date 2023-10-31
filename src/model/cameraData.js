@@ -22,7 +22,6 @@ export default async function fetchDataFromCamera() {
     'Content-Type': 'application/xml'
   });
   console.log(headers);
-  debugger;
   const url = `${baseUrl}?${params.toString()}`;
 
   

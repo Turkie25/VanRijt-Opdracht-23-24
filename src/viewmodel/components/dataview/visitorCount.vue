@@ -30,7 +30,6 @@ export default {
     display: flex;
     align-items: center;
     border-radius: 16px;
-    height: 40%;
 }
 
 .Visitor {

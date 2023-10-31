@@ -50,8 +50,8 @@ export default defineComponent({
 
       // Define the data to send in the request body using the captured values
       const requestBody = {
-        EMail: this.email,        // Use the email data property
-        Password: this.passwordGm, // Use the passwordGm data property
+        username: this.email,        // Use the email data property
+        password: this.passwordGm, // Use the passwordGm data property
       };
 
       // Define the headers you want to send with the request
@@ -62,12 +62,18 @@ export default defineComponent({
       // Send a POST request to the API with headers and the request body
       axios.post(apiUrl, requestBody, { headers })
         .then((response) => {
+          console.log(response)
+          if (response.data.success != true) {
+            console.log("cringe")
+            alert("wrong userinformation");
+            return
+          }
           // Handle the response data here
-          console.log(response.data);
+          this.$router.push('/')
         })
         .catch((error) => {
           // Handle any errors here
-          console.error(error);
+          console.error(error + "idk ging brokko");
         });
 
 

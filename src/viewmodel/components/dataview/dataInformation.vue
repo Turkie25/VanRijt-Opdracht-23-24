@@ -32,22 +32,22 @@ export default {
   background-color: $grayLight;
   color: black;
   height: fit-content;
-  width: 85%;
   border-radius: 5%;
   margin: 0 auto 0 auto; 
   box-shadow: -3px 2px 12px 6px rgba(124, 124, 124, 0.09);
-
 }
 
 /* Text Styles */
 .FestivalLabel {
   margin: 3% auto 0 5%;
   margin-bottom: 2%;
+  font-size: 3vh;
 }
 
 .In-Uit-stroomText {
   margin: 2% auto 0 5%;
   font-weight: $medium;
+  font-size: 2.5vh;
 }
 
 .InstroomColor {

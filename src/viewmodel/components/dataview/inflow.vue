@@ -21,21 +21,23 @@ export default {
     }
   },
   methods: {
-  async fetchCameraData() {
-    console.log("hallo");
-
-    try {
-      const cameraData = await cameraData2();
-      console.log("Fetched Camera Data:", cameraData); // Log the data to the console
-      this.cameraData = cameraData; // Store the data in a component data property
-    } catch (error) {
-      console.error("Error fetching camera data:", error);
-    }
-  }
-},
-created() {
+    async fetchCameraData() {
+      try {
+        const response = await fetch('@/model/cameraData.php'); // Update the path
+        if (response.ok) {
+          const cameraData = await response.json();
+          this.instroomNummer = cameraData.instroomNummer;
+        } else {
+          throw new Error("Failed to retrieve data from the camera API");
+        }
+      } catch (error) {
+        console.error("Error fetching camera data:", error);
+      }
+    },
+  },
+  created() {
     this.fetchCameraData(); // Call the method when the component is created
-  }
+  },
 };
 
 
@@ -51,6 +53,7 @@ created() {
     /* Dropshadow */
     box-shadow: -3px 2px 12px 6px rgba(2, 81, 92, 0.08);
     border-radius: 16px;
+    background-color: green;
 }
 
 .instroom-label {

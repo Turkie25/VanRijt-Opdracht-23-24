@@ -3,8 +3,8 @@
     <h2 class="ActueleBezoekersText">Actuele bezoekers</h2>
       <div class="CircularProgress" :style="circleStyle">
         <div class="ProgressValue">
-          <div class="CurrentValue">Huidig</div> {{ current }}
-          <div class="MaxValue"><p class="Max">Max {{ max }}</p></div>
+          <div class="CurrentValue">Huidig: {{ current }}</div> 
+          <div class="MaxValue"><p class="Max"></p>Max:<p class="MaxNumber">{{ max }}</p></div>
         </div>
       </div>
     </div>
@@ -14,8 +14,8 @@
 export default {
   data() {
     return {
-      current: 253,
-      max: 400
+      current: 500,
+      max: 1000
     };
   },
   computed: {
@@ -54,6 +54,7 @@ export default {
 /* Text Styles */
 .ActueleBezoekersText {
   margin: 10% auto 0 auto;
+  text-align: center;
 }
 
 /* Circular Progress Styles */
@@ -82,8 +83,12 @@ export default {
   position: absolute;
 }
 
-/* Number Styles */
-.Max {
+.MaxValue {
+  display: flex;
+}
+
+.MaxNumber {
+  margin: 0;
   color: $secondary;
 }
 </style>
