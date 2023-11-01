@@ -28,7 +28,7 @@ export const data = {
             borderColor: "#04A0B5",
             pointRadius: 1,
             pointHitRadius: 25,
-            data: [40, 89, 10, 40, 39, 80, 40, 50, 100, 70],
+            data: [40, 89, 10, 40, 39, 80, 40, 50, 500, 70],
         },
         {
             label: "Uitstroom",
@@ -36,7 +36,7 @@ export const data = {
             borderColor: "#E03076",
             pointRadius: 1,
             pointHitRadius: 25,
-            data: [60, 49, 55, 80, 99, 10, 5, 8, 15, 40],
+            data: [20, 49, 55, 80, 99, 10, 5, 8, 15, 40],
         },
     ],
 

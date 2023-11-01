@@ -41,6 +41,8 @@
     color: #04A0B5;
     font-size: 13vh;
     font-family: 'Manrope';
+    margin: 5%;
+
   }
   </style>
   
